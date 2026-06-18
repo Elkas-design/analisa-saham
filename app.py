@@ -7,7 +7,13 @@ st.title("📊 Smart Stock & Waran Analyzer FINAL")
 st.write("Analisa sederhana: trend, RSI, MA, dan risiko waran")
 
 # ================= INPUT =================
-ticker = st.text_input("Kode Saham / Waran", "AAPL")
+raw = st.text_input("Kode Saham / Waran", "BRMS")
+
+# auto detect Indonesia vs US
+if raw.isalpha() and len(raw) <= 5:
+    ticker = raw + ".JK"   # asumsi saham Indonesia
+else:
+    ticker = raw
 period = st.selectbox("Periode", ["1mo", "3mo", "6mo", "1y"])
 mode = st.radio("Mode", ["Saham", "Waran"])
 
