@@ -8,7 +8,20 @@ st.title("📊 Smart Analyzer STABLE (Anti Error)")
 st.write("Saham + Waran Analyzer versi stabil")
 
 # ================= INPUT =================
-raw = st.text_input("Kode Saham / Waran", "BRMS")
+st.subheader("🔎 Pilih Saham")
+
+stock_list = [
+    "BBCA.JK",
+    "BMRI.JK",
+    "BBRI.JK",
+    "BRMS.JK",
+    "GOTO.JK",
+    "AAPL",
+    "TSLA",
+    "NVDA"
+]
+
+ticker = st.selectbox("Cari / pilih saham", stock_list)
 period = st.selectbox("Periode", ["1mo", "3mo", "6mo", "1y"])
 mode = st.radio("Mode", ["Saham", "Waran"])
 
